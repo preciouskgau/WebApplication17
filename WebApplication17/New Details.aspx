@@ -11,6 +11,11 @@
         <asp:Label ID="Label1" runat="server" Font-Bold="True" Font-Italic="True" Font-Size="XX-Large" ForeColor="#009999" Text="Enter new login details"></asp:Label>
         <br />
         <br />
+        <asp:Label ID="Label5" runat="server" Font-Bold="True" Text="Enter ID number"></asp:Label>
+&nbsp;&nbsp;&nbsp;
+        <asp:TextBox ID="txtID" runat="server"></asp:TextBox>
+        <br />
+        <br />
         <asp:Label ID="Label2" runat="server" Font-Bold="True" Text="New Username:"></asp:Label>
 &nbsp;&nbsp;&nbsp;
         <asp:TextBox ID="txtNewUsername" runat="server"></asp:TextBox>
@@ -26,7 +31,10 @@
             <asp:TextBox ID="txtConfirmPass" runat="server"></asp:TextBox>
             <br />
             <br />
-            <asp:Button ID="Button1" runat="server" BackColor="#009999" Font-Bold="True" Font-Size="Medium" Height="42px" Text="SUBMIT" Width="301px" />
+            <asp:Button ID="btnNewSubmit" runat="server" BackColor="#009999" Font-Bold="True" Font-Size="Medium" Height="42px" Text="RESET" Width="301px" OnClick="btnNewSubmit_Click" />
+            <br />
+            <br />
+            <asp:HyperLink ID="HyperLink1" runat="server" Font-Bold="True" ForeColor="#CC0000" NavigateUrl="~/LOGIN.aspx">&lt;&lt;LOGIN&lt;&lt;</asp:HyperLink>
             <br />
         </div>
     </form>

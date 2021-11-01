@@ -17,8 +17,8 @@
     <UseIISExpress>true</UseIISExpress>
     <Use64BitIISExpress />
     <IISExpressSSLPort>44375</IISExpressSSLPort>
-    <IISExpressAnonymousAuthentication />
-    <IISExpressWindowsAuthentication />
+    <IISExpressAnonymousAuthentication>enabled</IISExpressAnonymousAuthentication>
+    <IISExpressWindowsAuthentication>enabled</IISExpressWindowsAuthentication>
     <IISExpressUseClassicPipelineMode />
     <UseGlobalApplicationHostFile />
     <NuGetPackageImportStamp>
@@ -67,6 +67,11 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="App_Data\galleryUsers.mdf" />
+    <Content Include="App_Data\galleryUsers_log.ldf">
+      <DependentUpon>galleryUsers.mdf</DependentUpon>
+    </Content>
+    <Content Include="gallery.aspx" />
     <Content Include="LOGIN.aspx" />
     <Content Include="New Details.aspx" />
     <Content Include="Register.aspx" />
@@ -74,6 +79,13 @@
     <Content Include="WELCOME.aspx" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="gallery.aspx.cs">
+      <DependentUpon>gallery.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="gallery.aspx.designer.cs">
+      <DependentUpon>gallery.aspx</DependentUpon>
+    </Compile>
     <Compile Include="LOGIN.aspx.cs">
       <DependentUpon>LOGIN.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

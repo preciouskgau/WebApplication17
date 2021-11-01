@@ -11,7 +11,7 @@ namespace WebApplication17
 {
 
 
-    public partial class LOGIN
+    public partial class gallery
     {
 
         /// <summary>
@@ -33,15 +33,6 @@ namespace WebApplication17
         protected global::System.Web.UI.WebControls.Label Label1;
 
         /// <summary>
-        /// lblError control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblError;
-
-        /// <summary>
         /// Label2 control.
         /// </summary>
         /// <remarks>
@@ -51,48 +42,39 @@ namespace WebApplication17
         protected global::System.Web.UI.WebControls.Label Label2;
 
         /// <summary>
-        /// txtUsername control.
+        /// txtUpload control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtUsername;
+        protected global::System.Web.UI.WebControls.TextBox txtUpload;
 
         /// <summary>
-        /// Label3 control.
+        /// btnBrowse control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label3;
+        protected global::System.Web.UI.WebControls.Button btnBrowse;
 
         /// <summary>
-        /// txtPassword control.
+        /// lblUpload control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtPassword;
+        protected global::System.Web.UI.WebControls.Label lblUpload;
 
         /// <summary>
-        /// HlForgot control.
+        /// btnUpload control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.HyperLink HlForgot;
-
-        /// <summary>
-        /// btnLogin2 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnLogin2;
+        protected global::System.Web.UI.WebControls.Button btnUpload;
     }
 }
