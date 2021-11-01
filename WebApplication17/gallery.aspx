@@ -12,8 +12,7 @@
         <br />
         <div>
             <asp:Label ID="Label2" runat="server" Font-Size="Large" Text="Upload image"></asp:Label>
-&nbsp;<asp:TextBox ID="txtUpload" runat="server" Height="22px"></asp:TextBox>
-            <asp:Button ID="btnBrowse" runat="server" Height="28px" Text="Browse..." />
+&nbsp;<asp:FileUpload ID="FileUpload1" runat="server" />
         </div>
         <p>
             <asp:Label ID="lblUpload" runat="server" Font-Size="Large"></asp:Label>
