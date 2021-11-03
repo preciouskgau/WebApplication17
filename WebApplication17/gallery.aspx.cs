@@ -12,7 +12,7 @@ namespace WebApplication17
 {
     public partial class gallery : System.Web.UI.Page
     {
-     
+        int id = 1;
         public SqlConnection conn = new SqlConnection(@"Data source=(LocalDB)\MSSQLLocalDB;AttachDbFilename =|DataDirectory|\galleryUsers.mdf;Integrated Security= True;Connect timeout=30");
         public DataSet ds;
         public SqlDataAdapter adapter;
@@ -26,15 +26,14 @@ namespace WebApplication17
 
         protected void btnUpload_Click(object sender, EventArgs e)
         {
-            int i = 1;
             string path,sql;
-            int id = i;
+            id = id + 1;
             DateTime date = DateTime.Now;
             conn.Open();
             if (FileUpload1.HasFile)
             {
-                FileUpload1.SaveAs(HttpContext.Current.Request.PhysicalApplicationPath + "/Image/" + FileUpload1.FileName);
-                i = i+1;
+              
+                FileUpload1.SaveAs(HttpContext.Current.Request.PhysicalApplicationPath + "/Image/" + FileUpload1.FileName);           
 
             }
             path = FileUpload1.FileName;
