@@ -26,13 +26,16 @@ namespace WebApplication17
 
         protected void btnUpload_Click(object sender, EventArgs e)
         {
+            int i = 1;
             string path,sql;
-            int id = 0;
+            int id = i;
             DateTime date = DateTime.Now;
             conn.Open();
             if (FileUpload1.HasFile)
             {
-                FileUpload1.SaveAs(HttpContext.Current.Request.PhysicalApplicationPath +  "Image/" + FileUpload1.FileName);
+                FileUpload1.SaveAs(HttpContext.Current.Request.PhysicalApplicationPath + "/Image/" + FileUpload1.FileName);
+                i = i+1;
+
             }
             path = FileUpload1.FileName;
             sql = "INSERT INTO [Images] VALUES('"+id+"','"+path+"','"+date+"')";
@@ -44,7 +47,7 @@ namespace WebApplication17
 
             conn.Close();
 
-
+           
         }
     }
 }
