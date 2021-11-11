@@ -9,8 +9,9 @@
 <body>
     <form id="form1" runat="server">
         <asp:Label ID="Label1" runat="server" Font-Bold="True" Font-Italic="True" Font-Size="X-Large" Text="MANAGE YOUR GALLERY"></asp:Label>
-        <asp:DataList ID="DataList1" runat="server" BackColor="#FFFFCC" RepeatColumns="10" RepeatDirection="Horizontal" RepeatLayout="Flow">
+        <asp:DataList ID="DataList1" runat="server" DataSourceID="galleryUsers" RepeatDirection="Horizontal">
         </asp:DataList>
+        <asp:SqlDataSource ID="galleryUsers" runat="server"></asp:SqlDataSource>
         <br />
         <div>
             <asp:Label ID="Label2" runat="server" Font-Size="Large" Text="Upload image"></asp:Label>

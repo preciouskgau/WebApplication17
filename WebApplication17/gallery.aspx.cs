@@ -24,9 +24,9 @@ namespace WebApplication17
             Filling();
         }
 
-        private void Filling()
+        public void Filling()
         {
-            adapter = new SqlDataAdapter("select * from Images", conn);
+            adapter = new SqlDataAdapter("select image from Images", conn);
             ds = new DataSet();
             adapter.Fill(ds);
             DataList1.DataSource = ds;
