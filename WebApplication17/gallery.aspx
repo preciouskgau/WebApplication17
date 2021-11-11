@@ -9,9 +9,6 @@
 <body>
     <form id="form1" runat="server">
         <asp:Label ID="Label1" runat="server" Font-Bold="True" Font-Italic="True" Font-Size="X-Large" Text="MANAGE YOUR GALLERY"></asp:Label>
-        <asp:DataList ID="DataList1" runat="server" DataSourceID="galleryUsers" RepeatDirection="Horizontal">
-        </asp:DataList>
-        <asp:SqlDataSource ID="galleryUsers" runat="server"></asp:SqlDataSource>
         <br />
         <div>
             <asp:Label ID="Label2" runat="server" Font-Size="Large" Text="Upload image"></asp:Label>
@@ -21,10 +18,23 @@
             <asp:Label ID="lblUpload" runat="server" Font-Size="Large"></asp:Label>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <asp:Button ID="btnUpload" runat="server" OnClick="btnUpload_Click" Text="Upload" />
+        &nbsp;</p>
+        
+        <p>
+            &nbsp;<asp:DataList ID="DataList1" runat="server" RepeatColumns="5" RepeatDirection="Horizontal">
+                <ItemTemplate>
+                    <table>
+                        <tr>
+                            <td><asp:Image ID="Image1" runat="server" ImageUrl='<%#Eval("Image")%>' /></td>
+                        </tr>
+                    </table>
+                </ItemTemplate>
+            </asp:DataList>
         </p>
         <p>
-            <asp:CheckBox ID="CheckBox1" runat="server" />
-        </p>
+            &nbsp;</p>
+        <p>
+            &nbsp;</p>
     </form>
 </body>
 </html>
