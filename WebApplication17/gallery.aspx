@@ -9,7 +9,7 @@
 <body>
     <form id="form1" runat="server">
         <asp:Label ID="Label1" runat="server" Font-Bold="True" Font-Italic="True" Font-Size="X-Large" Text="MANAGE YOUR GALLERY"></asp:Label>
-        <asp:DataList ID="DataList1" runat="server" BackColor="#FFFFCC">
+        <asp:DataList ID="DataList1" runat="server" BackColor="#FFFFCC" RepeatColumns="10" RepeatDirection="Horizontal" RepeatLayout="Flow">
         </asp:DataList>
         <br />
         <div>

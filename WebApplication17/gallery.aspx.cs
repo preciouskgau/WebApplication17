@@ -21,20 +21,18 @@ namespace WebApplication17
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            conn.Open();
-            command = conn.CreateCommand();
-            command.CommandType = CommandType.Text;
-            command.CommandText = "SELECT image FROM Images";
-            command.ExecuteNonQuery();
-            DataTable dataTable = new DataTable();
-            adapter = new SqlDataAdapter(command);
-            adapter.Fill(dataTable);
-            DataList1.DataSource = dataTable;
-            DataList1.DataBind();
-            conn.Close();
-
+            Filling();
         }
 
+        private void Filling()
+        {
+            adapter = new SqlDataAdapter("select * from Images", conn);
+            ds = new DataSet();
+            adapter.Fill(ds);
+            DataList1.DataSource = ds;
+            DataList1.DataBind();
+
+        }
         protected void btnUpload_Click(object sender, EventArgs e)
         {
             string path,sql;
@@ -50,11 +48,11 @@ namespace WebApplication17
             if (FileUpload1.HasFile)
             {
               
-                FileUpload1.SaveAs(HttpContext.Current.Request.PhysicalApplicationPath + "/imagess/" + FileUpload1.FileName.ToString());           
+                FileUpload1.SaveAs(HttpContext.Current.Request.PhysicalApplicationPath + "/imagess/" + FileUpload1.FileName);           
 
             }
-            path = "imagess/" + FileUpload1.FileName.ToString();
-            sql = "INSERT INTO [Images] VALUES('"+id+"','"+path.ToString()+"','"+date+"')";
+            path = FileUpload1.FileName;
+            sql = "INSERT INTO [Images] VALUES('"+id+"','"+path+"','"+date+"')";
 
             command = new SqlCommand(sql, conn);
             adapter = new SqlDataAdapter();           
