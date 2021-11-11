@@ -24,10 +24,13 @@ namespace WebApplication17
             conn.Open();
             command = conn.CreateCommand();
             command.CommandType = CommandType.Text;
-            command.CommandText = "SELECT FROM [Images]";
+            command.CommandText = "SELECT * FROM Images";
+            command.ExecuteNonQuery();
             DataTable dataTable = new DataTable();
             adapter = new SqlDataAdapter(command);
             adapter.Fill(dataTable);
+            DataList1.DataSource = dataTable;
+            DataList1.DataBind();
             conn.Close();
 
         }
@@ -38,8 +41,8 @@ namespace WebApplication17
             int id;
             conn.Open();
           
-            int min = 000000;
-            int max = 999999;
+            int min = 00000;
+            int max = 99999;
             Random rand = new Random();
             id = rand.Next(min, max);
           

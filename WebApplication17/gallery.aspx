@@ -19,6 +19,10 @@
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <asp:Button ID="btnUpload" runat="server" OnClick="btnUpload_Click" Text="Upload" />
         </p>
+        <p>
+            <asp:DataList ID="DataList1" runat="server" BackColor="#FFFFCC">
+            </asp:DataList>
+        </p>
     </form>
 </body>
 </html>
