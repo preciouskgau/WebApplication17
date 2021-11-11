@@ -24,7 +24,7 @@ namespace WebApplication17
             conn.Open();
             command = conn.CreateCommand();
             command.CommandType = CommandType.Text;
-            command.CommandText = "SELECT * FROM Images";
+            command.CommandText = "SELECT image FROM Images";
             command.ExecuteNonQuery();
             DataTable dataTable = new DataTable();
             adapter = new SqlDataAdapter(command);
@@ -50,7 +50,7 @@ namespace WebApplication17
             if (FileUpload1.HasFile)
             {
               
-                FileUpload1.SaveAs(HttpContext.Current.Request.PhysicalApplicationPath + "/Image/" + FileUpload1.FileName);           
+                FileUpload1.SaveAs(HttpContext.Current.Request.PhysicalApplicationPath + "/Image/" + FileUpload1.FileName.ToString());           
 
             }
             path = FileUpload1.FileName;
