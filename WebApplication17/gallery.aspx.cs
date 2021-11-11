@@ -12,7 +12,7 @@ namespace WebApplication17
 {
     public partial class gallery : System.Web.UI.Page
     {
-        int id = 1;
+       
         public SqlConnection conn = new SqlConnection(@"Data source=(LocalDB)\MSSQLLocalDB;AttachDbFilename =|DataDirectory|\galleryUsers.mdf;Integrated Security= True;Connect timeout=30");
         public DataSet ds;
         public SqlDataAdapter adapter;
@@ -21,15 +21,29 @@ namespace WebApplication17
 
         protected void Page_Load(object sender, EventArgs e)
         {
-           
+            conn.Open();
+            command = conn.CreateCommand();
+            command.CommandType = CommandType.Text;
+            command.CommandText = "SELECT FROM [Images]";
+            DataTable dataTable = new DataTable();
+            adapter = new SqlDataAdapter(command);
+            adapter.Fill(dataTable);
+            conn.Close();
+
         }
 
         protected void btnUpload_Click(object sender, EventArgs e)
         {
             string path,sql;
-            id = id + 1;
-            DateTime date = DateTime.Now;
+            int id;
             conn.Open();
+          
+            int min = 000000;
+            int max = 999999;
+            Random rand = new Random();
+            id = rand.Next(min, max);
+          
+            DateTime date = DateTime.Now;
             if (FileUpload1.HasFile)
             {
               
