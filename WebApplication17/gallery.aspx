@@ -25,9 +25,10 @@
                 <ItemTemplate>
                     <table>
                         <tr>
-                            <td><asp:Image ID="Image1" runat="server" ImageUrl='<%#Eval("Image")%>' /></td>
+                            <td><asp:Image ID="Image1" runat="server" ImageUrl='<%#Eval("Image")%>' Height="150" Width="200" /></td>
                         </tr>
                     </table>
+                   
                 </ItemTemplate>
             </asp:DataList>
         </p>
