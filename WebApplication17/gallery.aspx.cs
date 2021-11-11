@@ -50,11 +50,11 @@ namespace WebApplication17
             if (FileUpload1.HasFile)
             {
               
-                FileUpload1.SaveAs(HttpContext.Current.Request.PhysicalApplicationPath + "/Image/" + FileUpload1.FileName.ToString());           
+                FileUpload1.SaveAs(HttpContext.Current.Request.PhysicalApplicationPath + "/imagess/" + FileUpload1.FileName.ToString());           
 
             }
-            path = FileUpload1.FileName;
-            sql = "INSERT INTO [Images] VALUES('"+id+"','"+path+"','"+date+"')";
+            path = "imagess/" + FileUpload1.FileName.ToString();
+            sql = "INSERT INTO [Images] VALUES('"+id+"','"+path.ToString()+"','"+date+"')";
 
             command = new SqlCommand(sql, conn);
             adapter = new SqlDataAdapter();           
