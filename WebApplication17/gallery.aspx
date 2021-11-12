@@ -25,7 +25,11 @@
                 <ItemTemplate>
                     <table>
                         <tr>
-                            <td><asp:Image ID="Image1" runat="server" ImageUrl='<%#Eval("Image")%>' Height="150" Width="200" /></td>
+                            <td><asp:Image ID="Image1" runat="server" ImageUrl='<%#Eval("Image")%>' Height="157px" Width="200px" />
+                                <br />
+                                <asp:Button ID="btnView" runat="server" BorderStyle="None" Height="23px" Text="View" Width="95px" />
+                                <asp:Button ID="btnMore" runat="server" BorderStyle="None" Height="23px" Text="More..." Width="95px" />
+                            </td>
                         </tr>
                     </table>
                    
