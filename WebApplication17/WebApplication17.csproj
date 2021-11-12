@@ -73,6 +73,7 @@
     </Content>
     <Content Include="gallery.aspx" />
     <Content Include="LOGIN.aspx" />
+    <Content Include="MoreDetails.aspx" />
     <Content Include="New Details.aspx" />
     <Content Include="Register.aspx" />
     <Content Include="Web.config" />
@@ -92,6 +93,13 @@
     </Compile>
     <Compile Include="LOGIN.aspx.designer.cs">
       <DependentUpon>LOGIN.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MoreDetails.aspx.cs">
+      <DependentUpon>MoreDetails.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MoreDetails.aspx.designer.cs">
+      <DependentUpon>MoreDetails.aspx</DependentUpon>
     </Compile>
     <Compile Include="New Details.aspx.cs">
       <DependentUpon>New Details.aspx</DependentUpon>

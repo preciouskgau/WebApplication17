@@ -1,9 +1,16 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="gallery.aspx.cs" Inherits="WebApplication17.gallery" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" EnableEventValidation="false" CodeBehind="gallery.aspx.cs" Inherits="WebApplication17.gallery" %>
 
 <!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
+    <script languange ="c#" runat="server">
+        void ImageButton_Click(object sender,ImageClickEventArgs e)
+        {
+            Response.Redirect("MoreDetails.aspx");
+
+        }
+    </script>
     <title></title>
 </head>
 <body>
@@ -25,10 +32,8 @@
                 <ItemTemplate>
                     <table>
                         <tr>
-                            <td><asp:Image ID="Image1" runat="server" ImageUrl='<%#Eval("Image")%>' Height="157px" Width="200px" />
-                                <br />
-                                <asp:Button ID="btnView" runat="server" BorderStyle="None" Height="23px" Text="View" Width="95px" />
-                                <asp:Button ID="btnMore" runat="server" BorderStyle="None" Height="23px" Text="More..." Width="95px" />
+                            <td>
+                                <asp:ImageButton ID="ImageButton1" runat="server" ImageUrl='<%#Eval("Image")%>' Height="147px" Width="187px" OnClientClick="MoreDetails.aspx" PostBackUrl="~/MoreDetails.aspx" />
                             </td>
                         </tr>
                     </table>
