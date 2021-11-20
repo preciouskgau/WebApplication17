@@ -72,14 +72,10 @@ namespace WebApplication17
             {
                 txtFrom.Text = _UserRequest["UserName"];
             }
-                LinkButton linkDelete = sender as LinkButton;
-            GridViewRow gridViewRow = linkDelete.NamingContainer as GridViewRow;
-            string Sharefile = GridView1.DataKeys[gridViewRow.RowIndex].Value.ToString();
-            conn.Open();
-            string sql = "SELECT image FROM [Image2] WHERE username ='" + txtFrom.Text + "'and image ='" +Sharefile+"'";
-
-            command = new SqlCommand(sql, conn);
-            reader = command.ExecuteReader();
+            LinkButton linkMetadata = sender as LinkButton;
+            GridViewRow gridViewRow = linkMetadata.NamingContainer as GridViewRow;
+            string metadata = GridView1.DataKeys[gridViewRow.RowIndex].Value.ToString();
+          
 
 
 

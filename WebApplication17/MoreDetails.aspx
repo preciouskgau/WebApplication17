@@ -9,7 +9,7 @@
 <body>
     <form id="form1" runat="server">
         <div>
-            <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="false" DataKeyNames="image" OnSelectedIndexChanged="GridView1_SelectedIndexChanged">
+            <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="false" DataKeyNames="image" OnSelectedIndexChanged="GridView1_SelectedIndexChanged" style="margin-top: 15px">
                 <Columns>
                     <asp:TemplateField HeaderText="Image">
                         <ItemTemplate>
@@ -35,12 +35,9 @@
                 </Columns>
             </asp:GridView>
             <br />
-            <asp:Button ID="btnView" runat="server" Text="View" Width="88px" OnClick="btnView_Click" />
 &nbsp;&nbsp;&nbsp;
-            <asp:Button ID="btnDetails" runat="server" Text="Details" Width="80px" />
-&nbsp;&nbsp;&nbsp;
-            <asp:Button ID="btnDelete" runat="server" Text="Delete" Width="74px" />
-&nbsp;&nbsp;&nbsp;
+            &nbsp;&nbsp;&nbsp;
+            &nbsp;&nbsp;&nbsp;
             
             <asp:Button ID="btnShare" runat="server" Text="Share" Width="77px" />
             <br />

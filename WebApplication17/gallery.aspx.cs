@@ -24,8 +24,8 @@ namespace WebApplication17
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            
 
+            lblUpload.Text = "...............................................";
 
 
         }
@@ -67,17 +67,15 @@ namespace WebApplication17
             DateTime date = DateTime.Now;
             if (FileUpload1.HasFile)
             {
-                if (".jpg" == Path.GetExtension(FileUpload1.FileName))
+                if (".bmp" == Path.GetExtension(FileUpload1.FileName) || ".ico" == Path.GetExtension(FileUpload1.FileName)|| ".jpeg" == Path.GetExtension(FileUpload1.FileName)|| ".jpg" == Path.GetExtension(FileUpload1.FileName)|| ".gif" == Path.GetExtension(FileUpload1.FileName)||".tiff" == Path.GetExtension(FileUpload1.FileName)|| ".png" == Path.GetExtension(FileUpload1.FileName))
                 {
                     FileUpload1.SaveAs(Request.PhysicalApplicationPath + "image/" + FileUpload1.FileName.ToString());
                     lblUpload.Text = "Successfully uploaded";
                 }
                 else
                 {
-                    lblUpload.Text = "Invalid format";
+                    lblUpload.Text = "Unsupported format";
                 }
-              
-
                 path = "image/" + FileUpload1.FileName.ToString();
                 sql = "INSERT INTO [Images] VALUES('" + id + "','" + path.ToString() + "','" + date + "')";
 
@@ -90,6 +88,7 @@ namespace WebApplication17
             else
             {
                 lblUpload.Text = "No image was uploaded";
+               
             }
            
 
@@ -151,7 +150,7 @@ namespace WebApplication17
             adapter.DeleteCommand = command;
             adapter.DeleteCommand.ExecuteNonQuery();
             conn.Close();
-            lbldelete.Text = "Image " + txtview.Text + " is permanently deleted from gallery";
+            lbldelete.Text = "Image is permanently deleted";
 
         }
 
@@ -186,6 +185,11 @@ namespace WebApplication17
             conn.Close();
             lbldelete.Text = "All you images are permanently deleted from gallery";
 
+        }
+
+        protected void btnViewWithDetails_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("MoreDetails.aspx");
         }
     }
 }
