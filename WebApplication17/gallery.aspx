@@ -8,6 +8,7 @@
 </head>
 <body>
     <form id="form1" runat="server">
+       
         <asp:Label ID="Label1" runat="server" Font-Bold="True" Font-Italic="True" Font-Size="X-Large" Text="MANAGE YOUR GALLERY"></asp:Label>
         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         <asp:Label ID="Label3" runat="server" Font-Bold="True" Font-Italic="True" Font-Size="X-Large" Text="UPLOAD PANEL"></asp:Label>
@@ -37,7 +38,8 @@
                     <table>
                         <tr>
                             <td>
-                                <asp:ImageButton ID="ImageButton1" runat="server" ImageUrl='<%# Eval("Image") %>' CommandArgument='<%# Eval("image") %>' CommandName="view" Height="158px" Width="187px" OnClick="ImageButton1_Click" />
+                                <asp:ImageButton ID="ImageButton1" runat="server" ImageUrl='<%# Eval("Image") %>' CommandName="view" Height="158px" Width="187px" OnClick="ImageButton1_Click" />
+                                <asp:Button ID="btndelete2" runat="server"  ImageUrl='<%# Eval("Image") %>' Text="Button" />
                             </td>
                         </tr>
                     </table>

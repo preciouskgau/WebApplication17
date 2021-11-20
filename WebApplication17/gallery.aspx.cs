@@ -20,10 +20,11 @@ namespace WebApplication17
         public SqlDataAdapter adapter;
         public SqlDataReader reader;
         SqlCommand command;
-       
+        private readonly string ImageUrl;
 
         protected void Page_Load(object sender, EventArgs e)
         {
+            
 
 
 
@@ -67,11 +68,11 @@ namespace WebApplication17
             if (FileUpload1.HasFile)
             {
 
-                FileUpload1.SaveAs(Request.PhysicalApplicationPath + "imagess/" + FileUpload1.FileName.ToString());
+                FileUpload1.SaveAs(Request.PhysicalApplicationPath + "image/" + FileUpload1.FileName.ToString());
                 lblUpload.Text = "Successfully uploaded";
 
 
-                path = "imagess/" + FileUpload1.FileName.ToString();
+                path = "image/" + FileUpload1.FileName.ToString();
                 sql = "INSERT INTO [Images] VALUES('" + id + "','" + path.ToString() + "','" + date + "')";
 
                 command = new SqlCommand(sql, conn);
@@ -99,16 +100,15 @@ namespace WebApplication17
 
         protected void ImageButton1_Click(object sender, ImageClickEventArgs e)
         {
-
-
+          
 
 
         }
 
         protected void DataList1_SelectedIndexChanged(object sender, EventArgs e)
         {
-
-
+            
+            
         }
 
         protected void DropDownList3_SelectedIndexChanged(object sender, EventArgs e)
@@ -154,7 +154,7 @@ namespace WebApplication17
             string filename = txtview.Text;
             Response.Clear();
             Response.ContentType = "application/octect-stream";
-            Response.AppendHeader("content-disposition", "attachment;fileName=" + filename); ;
+            Response.AppendHeader("content-disposition", "attachment;fileName=" + filename);
             Response.TransmitFile(Server.MapPath(filename));
             Response.End();
         }
