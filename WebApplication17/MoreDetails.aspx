@@ -45,11 +45,11 @@
             <asp:Button ID="btnShare" runat="server" Text="Share" Width="77px" />
             <br />
             <br />
-            <asp:TextBox ID="TextBox1" runat="server"></asp:TextBox>
+            <asp:TextBox ID="txtFrom" runat="server"></asp:TextBox>
             <br />
             <asp:TextBox ID="TextBox2" runat="server"></asp:TextBox>
             <br />
-            <asp:TextBox ID="TextBox3" runat="server"></asp:TextBox>
+            <asp:TextBox ID="txtTo" runat="server"></asp:TextBox>
             <br />
         </div>
     </form>

@@ -24,6 +24,12 @@ namespace WebApplication17
         string connString = @"Data source=(LocalDB)\MSSQLLocalDB;AttachDbFilename =|DataDirectory|\galleryUsers.mdf;Integrated Security= True;Connect timeout=30";
         public SqlConnection conn;
         public SqlConnection conn2;
+
+        protected void Button1_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("LOGIN.aspx");
+        }
+
         public DataSet ds;
         public SqlDataAdapter adapter;
         public SqlDataReader reader;

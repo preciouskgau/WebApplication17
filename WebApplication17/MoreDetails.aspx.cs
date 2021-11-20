@@ -67,18 +67,22 @@ namespace WebApplication17
 
         protected void LinkButton2_Click(object sender, EventArgs e)
         {
-            LinkButton linkDelete = sender as LinkButton;
+            HttpCookie _UserRequest = Request.Cookies["UserRequests"];
+            if (_UserRequest != null)
+            {
+                txtFrom.Text = _UserRequest["UserName"];
+            }
+                LinkButton linkDelete = sender as LinkButton;
             GridViewRow gridViewRow = linkDelete.NamingContainer as GridViewRow;
-            string Deletefile = GridView1.DataKeys[gridViewRow.RowIndex].Value.ToString();
+            string Sharefile = GridView1.DataKeys[gridViewRow.RowIndex].Value.ToString();
             conn.Open();
-            command.CommandText = "delete from [Images] where Id=" + Deletefile;
-            command.Connection = conn;
-            command.ExecuteNonQuery();
-            DataFill();
-            conn.Close();
+            string sql = "SELECT image FROM [Image2] WHERE username ='" + txtFrom.Text + "'and image ='" +Sharefile+"'";
 
-           
-           
+            command = new SqlCommand(sql, conn);
+            reader = command.ExecuteReader();
+
+
+
         }
     }
 }

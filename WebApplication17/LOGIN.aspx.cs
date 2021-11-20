@@ -43,7 +43,11 @@ namespace WebApplication17
 
             conn.Close();
 
+            HttpCookie _UserRequest = new HttpCookie("UserRequests");
 
+            _UserRequest["UserName"] = txtUsername.Text;
+
+            Response.Redirect("gallery.aspx");
         }
 
         protected void txtUsername_TextChanged(object sender, EventArgs e)

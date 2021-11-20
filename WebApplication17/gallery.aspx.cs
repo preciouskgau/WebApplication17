@@ -67,10 +67,16 @@ namespace WebApplication17
             DateTime date = DateTime.Now;
             if (FileUpload1.HasFile)
             {
-
-                FileUpload1.SaveAs(Request.PhysicalApplicationPath + "image/" + FileUpload1.FileName.ToString());
-                lblUpload.Text = "Successfully uploaded";
-
+                if (".jpg" == Path.GetExtension(FileUpload1.FileName))
+                {
+                    FileUpload1.SaveAs(Request.PhysicalApplicationPath + "image/" + FileUpload1.FileName.ToString());
+                    lblUpload.Text = "Successfully uploaded";
+                }
+                else
+                {
+                    lblUpload.Text = "Invalid format";
+                }
+              
 
                 path = "image/" + FileUpload1.FileName.ToString();
                 sql = "INSERT INTO [Images] VALUES('" + id + "','" + path.ToString() + "','" + date + "')";

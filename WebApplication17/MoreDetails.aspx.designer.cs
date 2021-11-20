@@ -69,13 +69,13 @@ namespace WebApplication17
         protected global::System.Web.UI.WebControls.Button btnShare;
 
         /// <summary>
-        /// TextBox1 control.
+        /// txtFrom control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox1;
+        protected global::System.Web.UI.WebControls.TextBox txtFrom;
 
         /// <summary>
         /// TextBox2 control.
@@ -87,12 +87,12 @@ namespace WebApplication17
         protected global::System.Web.UI.WebControls.TextBox TextBox2;
 
         /// <summary>
-        /// TextBox3 control.
+        /// txtTo control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox3;
+        protected global::System.Web.UI.WebControls.TextBox txtTo;
     }
 }

@@ -11,7 +11,7 @@ namespace WebApplication17
 {
     public partial class New_Details : System.Web.UI.Page
     {
-        public SqlConnection conn = new SqlConnection(@"Data source=(LocalDB)\MSSQLLocalDB;AttachDbFilename =|DataDirectory|\ClientInfo.mdf;Integrated Security= True;Connect timeout=30");
+        public SqlConnection conn = new SqlConnection(@"Data source=(LocalDB)\MSSQLLocalDB;AttachDbFilename =|DataDirectory|\galleryUsers.mdf;Integrated Security= True;Connect timeout=30");
         public SqlDataAdapter adapter = new SqlDataAdapter();
         public DataSet ds = new DataSet();
         public SqlDataReader reader;
@@ -29,8 +29,13 @@ namespace WebApplication17
             command = new SqlCommand(sql, conn);
             adapter.UpdateCommand = command;
             adapter.UpdateCommand.ExecuteNonQuery();
-
             conn.Close();
+            lblAlert.Text = "New details Successfully submitted!";
+        }
+
+        protected void Button1_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("LOGIN.aspx");
         }
     }
 }
