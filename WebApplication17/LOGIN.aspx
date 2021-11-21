@@ -32,7 +32,6 @@
             <br />
             <asp:Button ID="btnLogin2" runat="server" BackColor="#009999" Font-Bold="True" Font-Size="Medium" Height="52px" OnClick="btnLogin2_Click" Text="LOGIN" Width="311px" />
             <br />
-            <asp:Button ID="Button1" runat="server" BackColor="White" BorderStyle="None" Font-Size="Large" ForeColor="Red" Height="41px" Text="Exit" Width="79px" />
             <br />
             <br />
         </div>

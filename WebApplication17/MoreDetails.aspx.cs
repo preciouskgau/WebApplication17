@@ -25,11 +25,8 @@ namespace WebApplication17
         protected void Page_Load(object sender, EventArgs e)
         {
 
-
-
             DataFill();
            
-
         }
 
         protected void btnView_Click(object sender, EventArgs e)

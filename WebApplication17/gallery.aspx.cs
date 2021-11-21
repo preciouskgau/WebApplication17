@@ -82,22 +82,7 @@ namespace WebApplication17
                     adapter.InsertCommand = command;
                     adapter.InsertCommand.ExecuteNonQuery();
 
-                    ExifReader exifReader = new ExifReader(path);
-
-                    if (exifReader.GetTagValue<string>(ExifTags.Make, out make))
-                    {
-                        TextBox1.Text = make.ToString();
-                    }
-
-                    if (exifReader.GetTagValue<string>(ExifTags.Model, out model))
-                    {
-                        TextBox2.Text = model.ToString();
-                    }
-
-                    if (exifReader.GetTagValue<DateTime>(ExifTags.DateTimeDigitized, out dateTime))
-                    {
-                        TextBox3.Text = dateTime.ToString();
-                    }
+                
                 }
                 else
                 {
