@@ -8,6 +8,7 @@ using System.Data.SqlClient;
 using System.Data;
 using AltoHttp;
 using System.IO;
+using ExifLib;
 
 namespace WebApplication17
 {
@@ -55,7 +56,8 @@ namespace WebApplication17
 
         protected void btnUpload_Click(object sender, EventArgs e)
         {
-            string path, sql;
+            string path, sql ,make , model;
+            DateTime dateTime;
             int id;
             conn.Open();
 
@@ -71,18 +73,37 @@ namespace WebApplication17
                 {
                     FileUpload1.SaveAs(Request.PhysicalApplicationPath + "image/" + FileUpload1.FileName.ToString());
                     lblUpload.Text = "Successfully uploaded";
+
+                    path = "image/" + FileUpload1.FileName.ToString();
+                    sql = "INSERT INTO [Images] VALUES('" + id + "','" + path.ToString() + "','" + date + "')";
+
+                    command = new SqlCommand(sql, conn);
+                    adapter = new SqlDataAdapter();
+                    adapter.InsertCommand = command;
+                    adapter.InsertCommand.ExecuteNonQuery();
+
+                    ExifReader exifReader = new ExifReader(path);
+
+                    if (exifReader.GetTagValue<string>(ExifTags.Make, out make))
+                    {
+                        TextBox1.Text = make.ToString();
+                    }
+
+                    if (exifReader.GetTagValue<string>(ExifTags.Model, out model))
+                    {
+                        TextBox2.Text = model.ToString();
+                    }
+
+                    if (exifReader.GetTagValue<DateTime>(ExifTags.DateTimeDigitized, out dateTime))
+                    {
+                        TextBox3.Text = dateTime.ToString();
+                    }
                 }
                 else
                 {
                     lblUpload.Text = "Unsupported format";
                 }
-                path = "image/" + FileUpload1.FileName.ToString();
-                sql = "INSERT INTO [Images] VALUES('" + id + "','" + path.ToString() + "','" + date + "')";
-
-                command = new SqlCommand(sql, conn);
-                adapter = new SqlDataAdapter();
-                adapter.InsertCommand = command;
-                adapter.InsertCommand.ExecuteNonQuery();
+               
 
             }
             else

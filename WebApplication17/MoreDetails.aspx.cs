@@ -9,6 +9,7 @@ using System.Data;
 using System.Net.Mail;
 using System.Net;
 using System.IO;
+using ExifLib;
 
 
 namespace WebApplication17
@@ -67,17 +68,30 @@ namespace WebApplication17
 
         protected void LinkButton2_Click(object sender, EventArgs e)
         {
-            HttpCookie _UserRequest = Request.Cookies["UserRequests"];
-            if (_UserRequest != null)
-            {
-                txtFrom.Text = _UserRequest["UserName"];
-            }
+            
             LinkButton linkMetadata = sender as LinkButton;
             GridViewRow gridViewRow = linkMetadata.NamingContainer as GridViewRow;
             string metadata = GridView1.DataKeys[gridViewRow.RowIndex].Value.ToString();
-          
 
+            string make, model;
+            DateTime dateTime;
 
+            ExifReader exifReader = new ExifReader(metadata);
+
+            if (exifReader.GetTagValue<string>(ExifTags.Make, out make))
+            {
+                txtFrom.Text = make.ToString();
+            }
+
+            if (exifReader.GetTagValue<string>(ExifTags.Model, out model))
+            {
+                txtTo.Text = model.ToString();
+            }
+
+            if (exifReader.GetTagValue<DateTime>(ExifTags.DateTimeDigitized, out dateTime))
+            {
+                TextBox2.Text = dateTime.ToString();
+            }
 
         }
     }

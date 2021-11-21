@@ -55,6 +55,13 @@
         <p style="margin-left: 0px">
             <asp:Button ID="btnDeleteAll" runat="server" OnClick="btnDeleteAll_Click" Text="Delete All images" Width="328px" />
         </p>
+        <p style="margin-left: 0px">
+            &nbsp;</p>
+        <asp:TextBox ID="TextBox1" runat="server"></asp:TextBox>
+        <br />
+        <asp:TextBox ID="TextBox2" runat="server"></asp:TextBox>
+        <br />
+        <asp:TextBox ID="TextBox3" runat="server"></asp:TextBox>
     </form>
 </body>
 </html>
